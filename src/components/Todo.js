@@ -17,6 +17,7 @@ export class Todo extends Component {
 
     }
     addItem = () => {
+        if(this.state.input!=='')
         this.setState({
             todo: this.state.todo.concat(this.state.input),
             input: ""

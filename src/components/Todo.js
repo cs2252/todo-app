@@ -30,7 +30,7 @@ export class Todo extends Component {
         this.addItem()
     }
     markDone=(event)=>{
-        console.log(event.target.id)
+        // console.log(event.target.id)
         const array=this.state.todo
         array.splice(event.target.id,1);
         this.setState({
@@ -50,11 +50,13 @@ export class Todo extends Component {
 
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.input} onChange={this.changeHandler} />
+                    <input type="text" autofocus="true" value={this.state.input} onChange={this.changeHandler} />
                     {/* <button onClick={this.addItem}>Add Item</button> */}
                     <input type="submit" value="AddItem" />
                 </form>
-                {list.length === 0 ? 'well done!! nothing to do enjoy!!' : <ul>{list}</ul>}
+                
+                {list.length === 0 ? 'well done!! nothing to do enjoy!!' : <p>There are {list.length} todos.</p>}
+                <ul>{list}</ul>
 
             </div>
         )
